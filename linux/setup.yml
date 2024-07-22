@@ -41,117 +41,117 @@ controller_inventory_sources:
     credential: Insights Inventory
 
 controller_templates:
-  - name: "LINUX / Register with Insights"
-    job_type: run
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/ec2_register.yml"
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    credentials:
-      - "Demo Credential"
-    survey_enabled: true
-    extra_vars:
-      activation_key: !unsafe "RHEL{{ ansible_distribution_major_version }}_{{ env }}"
-      org_id: REPLACEME
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
-        - question_name: Choose Environment
-          type: multiplechoice
-          variable: env
-          choices:
-            - Dev
-            - QA
-            - Prod
-          required: true
-        - question_name: Ansible Inventory Group (and Insights tag) to be created
-          type: text
-          variable: insights_tag
-          required: true
-        - question_name: Org ID
-          type: text
-          variable: org_id
-          required: true
+#  - name: "LINUX / Register with Insights"
+#    job_type: run
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/ec2_register.yml"
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    credentials:
+#      - "Demo Credential"
+#    survey_enabled: true
+#    extra_vars:
+#      activation_key: !unsafe "RHEL{{ ansible_distribution_major_version }}_{{ env }}"
+#      org_id: REPLACEME
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
+#        - question_name: Choose Environment
+#          type: multiplechoice
+#          variable: env
+#          choices:
+#            - Dev
+#            - QA
+#            - Prod
+#          required: true
+#        - question_name: Ansible Inventory Group (and Insights tag) to be created
+#          type: text
+#          variable: insights_tag
+#          required: true
+#        - question_name: Org ID
+#          type: text
+#          variable: org_id
+#          required: true
 
-  - name: "LINUX / Troubleshoot"
-    job_type: run
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/tshoot.yml"
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    use_fact_cache: true
-    credentials:
-      - "Demo Credential"
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
+#  - name: "LINUX / Troubleshoot"
+#    job_type: run
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/tshoot.yml"
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    use_fact_cache: true
+#    credentials:
+#      - "Demo Credential"
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
 
-  - name: "LINUX / Temporary Sudo"
-    job_type: run
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/temp_sudo.yml"
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    credentials:
-      - "Demo Credential"
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
-        - question_name: User Name
-          type: text
-          variable: sudo_user
-          required: true
-        - question_name: How long to grant access in minutes
-          type: integer
-          variable: sudo_time
-          default: 10
-          required: true
+#  - name: "LINUX / Temporary Sudo"
+#    job_type: run
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/temp_sudo.yml"
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    credentials:
+#      - "Demo Credential"
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
+#        - question_name: User Name
+#          type: text
+#          variable: sudo_user
+#          required: true
+#        - question_name: How long to grant access in minutes
+#          type: integer
+#          variable: sudo_time
+#          default: 10
+#          required: true
 
-  - name: "LINUX / Patching"
-    job_type: check
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/patching.yml"
-    execution_environment: Default execution environment
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    use_fact_cache: true
-    ask_job_type_on_launch: true
-    credentials:
-      - "Demo Credential"
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
+#  - name: "LINUX / Patching"
+#    job_type: check
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/patching.yml"
+#    execution_environment: Default execution environment
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    use_fact_cache: true
+#    ask_job_type_on_launch: true
+#    credentials:
+#      - "Demo Credential"
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
 
   - name: "LINUX / Start Service"
     job_type: run
@@ -227,26 +227,26 @@ controller_templates:
           variable: shell_script
           required: true
 
-  - name: "LINUX / Fact Scan"
-    project: "Ansible official demo project"
-    playbook: linux/fact_scan.yml
-    inventory: Demo Inventory
-    execution_environment: Default execution environment
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    use_fact_cache: true
-    credentials:
-      - Demo Credential
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
+#  - name: "LINUX / Fact Scan"
+#    project: "Ansible official demo project"
+#    playbook: linux/fact_scan.yml
+#    inventory: Demo Inventory
+#    execution_environment: Default execution environment
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    use_fact_cache: true
+#    credentials:
+#      - Demo Credential
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
 
   - name: "LINUX / Podman Webserver"
     job_type: run
@@ -356,88 +356,88 @@ controller_templates:
           variable: _hosts
           required: true
 
-  - name: "LINUX / Multi-profile Compliance"
-    job_type: run
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/compliance-enforce.yml"
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    credentials:
-      - "Demo Credential"
-    extra_vars:
-      # used by CIS profile role
-      sudo_require_authentication: false
-      # used by STIG profile role
-      sudo_remove_nopasswd: false
-      sudo_remove_no_authenticate: false
-      # used by CIS and STIG profile role
-      accounts_password_set_max_life_existing: false
-      # used by the CJIS profile role
-      service_firewalld_enabled: false
-      firewalld_sshd_port_enabled: false
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
-        - question_name: Compliance Profile
-          type: multiplechoice
-          variable: compliance_profile
-          required: true
-          choices:
-            - cis
-            - cjis
-            - cui
-            - hipaa
-            - ospp
-            - pci_dss
-            - stig
+#  - name: "LINUX / Multi-profile Compliance"
+#    job_type: run
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/compliance-enforce.yml"
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    credentials:
+#      - "Demo Credential"
+#    extra_vars:
+#      # used by CIS profile role
+#      sudo_require_authentication: false
+#      # used by STIG profile role
+#      sudo_remove_nopasswd: false
+#      sudo_remove_no_authenticate: false
+#      # used by CIS and STIG profile role
+#      accounts_password_set_max_life_existing: false
+#      # used by the CJIS profile role
+#      service_firewalld_enabled: false
+#      firewalld_sshd_port_enabled: false
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
+#        - question_name: Compliance Profile
+#          type: multiplechoice
+#          variable: compliance_profile
+#          required: true
+#          choices:
+#            - cis
+#            - cjis
+#            - cui
+#            - hipaa
+#            - ospp
+#            - pci_dss
+#            - stig
 
-  - name: "LINUX / Multi-profile Compliance Report"
-    job_type: run
-    inventory: "Demo Inventory"
-    project: "Ansible official demo project"
-    playbook: "linux/compliance-report.yml"
-    notification_templates_started: Telemetry
-    notification_templates_success: Telemetry
-    notification_templates_error: Telemetry
-    credentials:
-      - "Demo Credential"
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          required: true
-        - question_name: Compliance Profile
-          type: multiplechoice
-          variable: compliance_profile
-          required: true
-          choices:
-            - cis
-            - cjis
-            - cui
-            - hipaa
-            - ospp
-            - pci_dss
-            - stig
-        - question_name: Use httpd on the target host(s) to access reports locally?
-          type: multiplechoice
-          variable: use_httpd
-          required: true
-          choices:
-            - "true"
-            - "false"
-          default: "true"
+#  - name: "LINUX / Multi-profile Compliance Report"
+#    job_type: run
+#    inventory: "Demo Inventory"
+#    project: "Ansible official demo project"
+#    playbook: "linux/compliance-report.yml"
+#    notification_templates_started: Telemetry
+#    notification_templates_success: Telemetry
+#    notification_templates_error: Telemetry
+#    credentials:
+#      - "Demo Credential"
+#    survey_enabled: true
+#    survey:
+#      name: ''
+#      description: ''
+#      spec:
+#        - question_name: Server Name or Pattern
+#          type: text
+#          variable: _hosts
+#          required: true
+#        - question_name: Compliance Profile
+#          type: multiplechoice
+#          variable: compliance_profile
+#          required: true
+#          choices:
+#            - cis
+#            - cjis
+#            - cui
+#            - hipaa
+#            - ospp
+#            - pci_dss
+#            - stig
+#        - question_name: Use httpd on the target host(s) to access reports locally?
+#          type: multiplechoice
+#          variable: use_httpd
+#          required: true
+#          choices:
+#            - "true"
+#            - "false"
+#          default: "true"
 
   - name: "LINUX / Insights Compliance Scan"
     job_type: run
